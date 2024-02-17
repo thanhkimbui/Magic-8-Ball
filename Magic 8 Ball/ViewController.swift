@@ -10,9 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let ballArray = [#imageLiteral(resourceName: "ball1.png"),#imageLiteral(resourceName: "ball2.png"),#imageLiteral(resourceName: "ball3.png"),#imageLiteral(resourceName: "ball4.png"),#imageLiteral(resourceName: "ball5.png")]
-
-
-
+//    @IBOutlet weak var askLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    let ballArray = ["ball1", "ball2", "ball3", "ball4", "ball5"]
+    
+    override func viewDidLoad() {
+        //        askLabel.layer.borderColor = UIColor(red: 50/255, green: 173/255, blue: 230/255, alpha: 0/255).cgColor
+        //        askLabel.layer.borderWidth = 2.0
+        //        askLabel.layer.cornerRadius = 8
+        //        askLabel.layer.masksToBounds = true
+        
+    }
+    
+    @IBAction func askButtonPressed(_ sender: UIButton) {
+        imageView.image = UIImage(imageLiteralResourceName: ballArray[Int.random(in: 0...ballArray.count - 1)])
+    }
+    
+    
+    
 }
 
